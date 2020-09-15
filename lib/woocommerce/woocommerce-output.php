@@ -1,28 +1,28 @@
 <?php
 /**
- * Visual Voyager.
+ * My Genesis
  *
- * This file adds the WooCommerce styles and the Customizer additions for WooCommerce to the Visual Voyager Theme.
+ * This file adds the WooCommerce styles and the custom CSS to the My Genesis Theme's custom WooCommerce stylesheet.
  *
- * @package Visual Voyager
- * @author  HelloTham
+ * @package My_Genesis
+ * @author  Chris Tham
  * @license GPL-2.0-or-later
- * @link    https://www.hellotham.com/
+ * @link    https://christham.net
  */
 
-add_filter( 'woocommerce_enqueue_styles', 'visual_voyager_woocommerce_styles' );
+add_filter( 'woocommerce_enqueue_styles', 'my_genesis_woocommerce_styles' );
 /**
  * Enqueues the theme's custom WooCommerce styles to the WooCommerce plugin.
  *
  * @param array $enqueue_styles The WooCommerce styles to enqueue.
- * @since 2.3.0
+ * @since 1.0.0
  *
  * @return array Modified WooCommerce styles to enqueue.
  */
-function visual_voyager_woocommerce_styles( $enqueue_styles ) {
+function my_genesis_woocommerce_styles( $enqueue_styles ) {
 
 	$enqueue_styles[ genesis_get_theme_handle() . '-woocommerce-styles' ] = [
-		'src'     => get_stylesheet_directory_uri() . '/lib/woocommerce/visual-voyager-woocommerce.css',
+		'src'     => get_stylesheet_directory_uri() . '/lib/woocommerce/essence-woocommerce.css',
 		'deps'    => '',
 		'version' => genesis_get_theme_version(),
 		'media'   => 'screen',
@@ -32,91 +32,80 @@ function visual_voyager_woocommerce_styles( $enqueue_styles ) {
 
 }
 
-add_action( 'wp_enqueue_scripts', 'visual_voyager_woocommerce_css' );
+add_action( 'wp_enqueue_scripts', 'my_genesis_woocommerce_css' );
 /**
  * Adds the themes's custom CSS to the WooCommerce stylesheet.
  *
- * @since 2.3.0
- *
- * @return string CSS to be outputted after the theme's custom WooCommerce stylesheet.
+ * @since 1.0.0
  */
-function visual_voyager_woocommerce_css() {
+function my_genesis_woocommerce_css() {
 
-	// If WooCommerce isn't active, exit early.
+	// If WooCommerce isn't active, exits early.
 	if ( ! class_exists( 'WooCommerce' ) ) {
 		return;
 	}
 
-	$appearance = genesis_get_config( 'appearance' );
-
-	$color_link   = get_theme_mod( 'visual_voyager_link_color', $appearance['default-colors']['link'] );
-	$color_accent = get_theme_mod( 'visual_voyager_accent_color', $appearance['default-colors']['accent'] );
+	$color_link = get_theme_mod( 'my_genesis_link_color', my_genesis_customizer_get_default_link_color() );
 
 	$woo_css = '';
 
-	$woo_css .= ( $appearance['default-colors']['link'] !== $color_link ) ? sprintf(
+	$woo_css .= ( my_genesis_customizer_get_default_link_color() !== $color_link ) ? sprintf(
 		'
 
 		.woocommerce div.product p.price,
 		.woocommerce div.product span.price,
 		.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover,
 		.woocommerce div.product .woocommerce-tabs ul.tabs li a:focus,
+		.woocommerce-error::before,
+		.woocommerce-info::before,
+		.woocommerce-message::before,
 		.woocommerce ul.products li.product h3:hover,
+		.woocommerce ul.products li.product h2:hover,
 		.woocommerce ul.products li.product .price,
 		.woocommerce .woocommerce-breadcrumb a:hover,
 		.woocommerce .woocommerce-breadcrumb a:focus,
 		.woocommerce .widget_layered_nav ul li.chosen a::before,
 		.woocommerce .widget_layered_nav_filters ul li a::before,
+		.woocommerce .widget_rating_filter ul li.chosen a::before,
 		.woocommerce .widget_rating_filter ul li.chosen a::before {
-			color: %s;
+			color: %1$s;
 		}
 
-	',
-		$color_link
-	) : '';
-
-	$woo_css .= ( $appearance['default-colors']['accent'] !== $color_accent ) ? sprintf(
-		'
-		.woocommerce a.button:hover,
-		.woocommerce a.button:focus,
-		.woocommerce a.button.alt:hover,
-		.woocommerce a.button.alt:focus,
-		.woocommerce button.button:hover,
-		.woocommerce button.button:focus,
-		.woocommerce button.button.alt:hover,
-		.woocommerce button.button.alt:focus,
-		.woocommerce input.button:hover,
-		.woocommerce input.button:focus,
-		.woocommerce input.button.alt:hover,
-		.woocommerce input.button.alt:focus,
-		.woocommerce input[type="submit"]:hover,
-		.woocommerce input[type="submit"]:focus,
+		.woocommerce a.button,
+		.woocommerce a.button.alt,
+		.woocommerce button.button,
+		.woocommerce button.button.alt,
+		.woocommerce input.button,
+		.woocommerce input.button.alt,
+		.woocommerce input[type="submit"],
+		.woocommerce input.button[type="submit"],
+		.woocommerce #respond input#submit,
+		.woocommerce #respond input#submit.alt,
 		.woocommerce span.onsale,
-		.woocommerce #respond input#submit:hover,
-		.woocommerce #respond input#submit:focus,
-		.woocommerce #respond input#submit.alt:hover,
-		.woocommerce #respond input#submit.alt:focus,
-		.woocommerce.widget_price_filter .ui-slider .ui-slider-handle,
-		.woocommerce.widget_price_filter .ui-slider .ui-slider-range {
+		.woocommerce .woocommerce-tabs a.button,
+		.woocommerce .woocommerce-product-details__short-description a.button,
+		.single-product.woocommerce .site-inner:before {
 			background-color: %1$s;
-			color: %2$s;
 		}
 
+		.woocommerce nav.woocommerce-pagination ul li a:focus,
+		.woocommerce nav.woocommerce-pagination ul li a:hover,
+		.woocommerce nav.woocommerce-pagination ul li span.current,
+		.woocommerce .woocommerce-tabs a.button.text,
+		.woocommerce .woocommerce-product-details__short-description a.button.text {
+			border-color: %1$s;
+			color: %1$s;
+		}
+
+		ul.woocommerce-error,
 		.woocommerce-error,
 		.woocommerce-info,
 		.woocommerce-message {
 			border-top-color: %1$s;
 		}
 
-		.woocommerce-error::before,
-		.woocommerce-info::before,
-		.woocommerce-message::before {
-			color: %1$s;
-		}
-
 	',
-		$color_accent,
-		visual_voyager_color_contrast( $color_accent )
+		$color_link
 	) : '';
 
 	if ( $woo_css ) {

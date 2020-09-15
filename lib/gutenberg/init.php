@@ -2,19 +2,19 @@
 /**
  * Gutenberg theme support.
  *
- * @package Visual Voyager
- * @author  HelloTham
+ * @package My Genesis
+ * @author  Chris Tham
  * @license GPL-2.0-or-later
- * @link    https://www.hellotham.com/
+ * @link    https://christham.net/
  */
 
-add_action( 'wp_enqueue_scripts', 'visual_voyager_enqueue_gutenberg_frontend_styles' );
+add_action( 'wp_enqueue_scripts', 'my_genesis_pro_enqueue_gutenberg_frontend_styles' );
 /**
  * Enqueues Gutenberg front-end styles.
  *
- * @since 2.7.0
+ * @since 1.1.0
  */
-function visual_voyager_enqueue_gutenberg_frontend_styles() {
+function my_genesis_pro_enqueue_gutenberg_frontend_styles() {
 
 	wp_enqueue_style(
 		genesis_get_theme_handle() . '-gutenberg',
@@ -25,61 +25,38 @@ function visual_voyager_enqueue_gutenberg_frontend_styles() {
 
 }
 
-add_action( 'enqueue_block_editor_assets', 'visual_voyager_block_editor_styles' );
+add_action( 'enqueue_block_editor_assets', 'my_genesis_pro_block_editor_styles' );
 /**
  * Enqueues Gutenberg admin editor fonts and styles.
  *
- * @since 2.7.0
+ * @since 1.1.0
  */
-function visual_voyager_block_editor_styles() {
+function my_genesis_pro_block_editor_styles() {
 
-	$appearance = genesis_get_config( 'appearance' );
+	$block_editor_settings = genesis_get_config( 'block-editor-settings' );
 
 	wp_enqueue_style(
 		genesis_get_theme_handle() . '-gutenberg-fonts',
-		$appearance['fonts-url'],
+		$block_editor_settings['admin-fonts-url'],
 		[],
 		genesis_get_theme_version()
 	);
 
-}
+	wp_enqueue_script(
+		genesis_get_theme_handle() . '-gutenberg-js',
+		get_stylesheet_directory_uri() . '/lib/gutenberg/admin/js/block-classes.js',
+		[ 'wp-dom' ],
+		genesis_get_theme_version(),
+		true
+	);
 
-add_filter( 'body_class', 'visual_voyager_blocks_body_classes' );
-/**
- * Adds body classes to help with block styling.
- *
- * - `has-no-blocks` if content contains no blocks.
- * - `first-block-[block-name]` to allow changes based on the first block (such as removing padding above a Cover block).
- * - `first-block-align-[alignment]` to allow styling adjustment if the first block is wide or full-width.
- *
- * @since 2.8.0
- *
- * @param array $classes The original classes.
- * @return array The modified classes.
- */
-function visual_voyager_blocks_body_classes( $classes ) {
-
-	if ( ! is_singular() || ! function_exists( 'has_blocks' ) || ! function_exists( 'parse_blocks' ) ) {
-		return $classes;
-	}
-
-	if ( ! has_blocks() ) {
-		$classes[] = 'has-no-blocks';
-		return $classes;
-	}
-
-	$post_object = get_post( get_the_ID() );
-	$blocks      = (array) parse_blocks( $post_object->post_content );
-
-	if ( isset( $blocks[0]['blockName'] ) ) {
-		$classes[] = 'first-block-' . str_replace( '/', '-', $blocks[0]['blockName'] );
-	}
-
-	if ( isset( $blocks[0]['attrs']['align'] ) ) {
-		$classes[] = 'first-block-align-' . $blocks[0]['attrs']['align'];
-	}
-
-	return $classes;
+	wp_localize_script(
+		genesis_get_theme_handle() . '-gutenberg-js',
+		'studiopressConfig',
+		[
+			'defaultLayout' => genesis_get_option( 'site_layout' ),
+		]
+	);
 
 }
 
@@ -95,37 +72,47 @@ add_theme_support( 'align-wide' );
 // Make media embeds responsive.
 add_theme_support( 'responsive-embeds' );
 
-// Add support for custom line heights.
-add_theme_support( 'custom-line-height' );
-
-// Add support for custom units.
-add_theme_support( 'custom-units' );
-
-$visual_voyager_appearance = genesis_get_config( 'appearance' );
+$my_genesis_block_editor_settings = genesis_get_config( 'block-editor-settings' );
 
 // Adds support for editor font sizes.
-add_theme_support(
-	'editor-font-sizes',
-	$visual_voyager_appearance['editor-font-sizes']
-);
+add_theme_support( 'editor-font-sizes', $my_genesis_block_editor_settings['editor-font-sizes'] );
 
 // Adds support for editor color palette.
-add_theme_support(
-	'editor-color-palette',
-	$visual_voyager_appearance['editor-color-palette']
-);
+add_theme_support( 'editor-color-palette', $my_genesis_block_editor_settings['editor-color-palette'] );
 
 require_once get_stylesheet_directory() . '/lib/gutenberg/inline-styles.php';
 
-add_action( 'after_setup_theme', 'visual_voyager_content_width', 0 );
+add_action( 'after_setup_theme', 'my_genesis_pro_content_width', 0 );
 /**
  * Set content width to match the “wide” Gutenberg block width.
  */
-function visual_voyager_content_width() {
+function my_genesis_pro_content_width() {
 
-	$appearance = genesis_get_config( 'appearance' );
+	$block_editor_settings = genesis_get_config( 'block-editor-settings' );
 
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- See https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/924
-	$GLOBALS['content_width'] = apply_filters( 'visual_voyager_content_width', $appearance['content-width'] );
+	$GLOBALS['content_width'] = apply_filters( 'my_genesis_pro_content_width', $block_editor_settings['content-width'] );
+
+}
+
+add_action( 'init', 'my_genesis_custom_block_style' );
+/**
+ * Adds custom styles to WordPress core blocks.
+ *
+ * @since 1.4.0
+ */
+function my_genesis_custom_block_style() {
+
+	if ( ! function_exists( 'register_block_style' ) ) {
+		return;
+	}
+
+	$names = genesis_get_config( 'block-styles' );
+
+	foreach ( $names as $name => $styles ) {
+		foreach ( $styles as $style ) {
+			register_block_style( $name, $style );
+		}
+	}
 
 }

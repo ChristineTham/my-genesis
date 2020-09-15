@@ -1,137 +1,63 @@
 <?php
 /**
- * Visual Voyager.
+ * My Genesis
  *
- * This file adds functions to the Visual Voyager Theme.
+ * This file adds functions to the My Genesis Theme.
  *
- * @package Visual Voyager
- * @author  HelloTham
+ * @package My_Genesis
+ * @author  Chris Tham
  * @license GPL-2.0-or-later
- * @link    https://www.hellotham.com/
+ * @link    https://christham.net
  */
 
 // Starts the engine.
 require_once get_template_directory() . '/lib/init.php';
 
-// Sets up the Theme.
-require_once get_stylesheet_directory() . '/lib/theme-defaults.php';
-
-define( 'CHILD_THEME_NAME', 'Visual Voyager' );
-define( 'CHILD_THEME_URL', 'https://visualvoyager.net/' );
-define( 'CHILD_THEME_VERSION', '1.0.0' );
-
-add_action( 'after_setup_theme', 'visual_voyager_localization_setup' );
+add_action( 'after_setup_theme', 'my_genesis_localization_setup' );
 /**
  * Sets localization (do not remove).
  *
  * @since 1.0.0
  */
-function visual_voyager_localization_setup() {
+function my_genesis_localization_setup() {
 
 	load_child_theme_textdomain( genesis_get_theme_handle(), get_stylesheet_directory() . '/languages' );
 
 }
 
-// Adds helper functions.
+// Adds the theme helper functions.
 require_once get_stylesheet_directory() . '/lib/helper-functions.php';
 
-// Adds image upload and color select to Customizer.
-require_once get_stylesheet_directory() . '/lib/customize.php';
+// Adds the theme title functions.
+require_once get_stylesheet_directory() . '/lib/header-functions.php';
 
-// Includes Customizer CSS.
-require_once get_stylesheet_directory() . '/lib/output.php';
+// Adds the theme title functions.
+require_once get_stylesheet_directory() . '/lib/title-functions.php';
 
-// Required Plugins.
-require_once get_stylesheet_directory() . '/lib/required-plugins.php';
+// Adds image upload and color select to WordPress Theme Customizer.
+require_once get_stylesheet_directory() . '/lib/customizer/customize.php';
+
+// Includes customizer CSS.
+require_once get_stylesheet_directory() . '/lib/customizer/output.php';
 
 // Adds WooCommerce support.
 require_once get_stylesheet_directory() . '/lib/woocommerce/woocommerce-setup.php';
 
-// Adds the required WooCommerce styles and Customizer CSS.
+// Includes the customizer CSS for the WooCommerce plugin.
 require_once get_stylesheet_directory() . '/lib/woocommerce/woocommerce-output.php';
 
-// Adds the Genesis Connect WooCommerce notice.
+// Includes notice to install Genesis Connect for WooCommerce.
 require_once get_stylesheet_directory() . '/lib/woocommerce/woocommerce-notice.php';
 
-add_action( 'after_setup_theme', 'genesis_child_gutenberg_support' );
-/**
- * Adds Gutenberg opt-in features and styling.
- *
- * @since 2.7.0
- */
-function genesis_child_gutenberg_support() { // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound -- using same in all child themes to allow action to be unhooked.
-	require_once get_stylesheet_directory() . '/lib/gutenberg/init.php';
-}
-
-// Registers the responsive menus.
-if ( function_exists( 'genesis_register_responsive_menus' ) ) {
-	genesis_register_responsive_menus( genesis_get_config( 'responsive-menus' ) );
-}
-
-add_action( 'wp_enqueue_scripts', 'visual_voyager_enqueue_scripts_styles' );
-/**
- * Enqueues scripts and styles.
- *
- * @since 1.0.0
- */
-function visual_voyager_enqueue_scripts_styles() {
-
-	$appearance = genesis_get_config( 'appearance' );
-
-	wp_enqueue_style(
-		genesis_get_theme_handle() . '-fonts',
-		$appearance['fonts-url'],
-		[],
-		genesis_get_theme_version()
-	);
-
-	wp_enqueue_style( 'dashicons' );
-	wp_enqueue_style( 'visual-voyager-font-lato', '//fonts.googleapis.com/css?family=Lato:300,400,700', [], genesis_get_theme_version() );
-	wp_enqueue_style( 'visual-voyager-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', [], '4.7.0' );
-	wp_enqueue_style( 'visual-voyager-line-awesome', '//maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', [], '1.1' );
-	wp_enqueue_script( 'visual-voyager-match-height', get_stylesheet_directory_uri() . '/js/match-height.js', [ 'jquery' ], '0.5.2', true );
-	wp_enqueue_script(
-		'visual-voyager-js',
-		get_stylesheet_directory_uri() . '/js/visual-voyager.js',
-		[ 'jquery', 'visual-voyager-match-height' ],
-		genesis_get_theme_version(),
-		true
-	);
-
-	if ( genesis_is_amp() ) {
-		wp_enqueue_style(
-			genesis_get_theme_handle() . '-amp',
-			get_stylesheet_directory_uri() . '/lib/amp/amp.css',
-			[ genesis_get_theme_handle() ],
-			genesis_get_theme_version()
-		);
-	}
-
-}
-
-add_action( 'wp_enqueue_scripts', 'visual_voyager_rtl_styles', 12 );
-/**
- * Enqueue RTL Styles.
- */
-function visual_voyager_rtl_styles() {
-	// Load RTL stylesheet.
-	if ( ! is_rtl() ) {
-		return;
-	}
-
-	wp_enqueue_style( 'visual-voyager-rtl', get_stylesheet_directory_uri() . '/rtl/style-rtl.css', [], genesis_get_theme_version() );
-
-}
-
-add_action( 'after_setup_theme', 'visual_voyager_theme_support', 9 );
+add_action( 'after_setup_theme', 'my_genesis_theme_support', 1 );
 /**
  * Add desired theme supports.
  *
  * See config file at `config/theme-supports.php`.
  *
- * @since 3.0.0
+ * @since 1.3.0
  */
-function visual_voyager_theme_support() {
+function my_genesis_theme_support() {
 
 	$theme_supports = genesis_get_config( 'theme-supports' );
 
@@ -141,41 +67,107 @@ function visual_voyager_theme_support() {
 
 }
 
-add_action( 'after_setup_theme', 'visual_voyager_post_type_support', 9 );
+add_action( 'after_setup_theme', 'genesis_child_gutenberg_support' );
 /**
- * Add desired post type supports.
+ * Adds Gutenberg opt-in features and styling.
  *
- * See config file at `config/post-type-supports.php`.
- *
- * @since 3.0.0
- */
-function visual_voyager_post_type_support() {
-
-	$post_type_supports = genesis_get_config( 'post-type-supports' );
-
-	foreach ( $post_type_supports as $post_type => $args ) {
-		add_post_type_support( $post_type, $args );
-	}
-
-}
-
-add_action( 'genesis_site_title', 'visual_voyager_custom_logo', 0 );
-/**
- * Display the custom logo.
+ * Allows plugins to remove support if required.
  *
  * @since 1.1.0
  */
-function visual_voyager_custom_logo() {
-	if ( function_exists( 'the_custom_logo' ) ) {
-		the_custom_logo();
-	}
+function genesis_child_gutenberg_support() { // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound -- using same in all child themes to allow action to be unhooked.
+
+	require_once get_stylesheet_directory() . '/lib/gutenberg/init.php';
+
 }
 
+// Registers the responsive menus.
+if ( function_exists( 'genesis_register_responsive_menus' ) ) {
+	genesis_register_responsive_menus( genesis_get_config( 'responsive-menus' ) );
+}
+
+add_action( 'wp_enqueue_scripts', 'my_genesis_enqueue_scripts_styles' );
+/**
+ * Enqueues scripts and styles.
+ *
+ * @since 1.0.0
+ */
+function my_genesis_enqueue_scripts_styles() {
+
+	wp_enqueue_style(
+		'essence-fonts',
+		'https://fonts.googleapis.com/css?family=Alegreya+Sans:400,400i,700|Lora:400,700&display=swap',
+		[],
+		genesis_get_theme_version()
+	);
+
+	wp_enqueue_style(
+		'ionicons',
+		'https://unpkg.com/ionicons@4.1.2/dist/css/ionicons.min.css',
+		[],
+		genesis_get_theme_version()
+	);
+
+	if ( genesis_is_amp() ) {
+		wp_enqueue_style(
+			genesis_get_theme_handle() . '-amp',
+			get_stylesheet_directory_uri() . '/lib/amp/amp.css',
+			[ genesis_get_theme_handle() ],
+			genesis_get_theme_version()
+		);
+
+		return; // Load no further scripts and styles on AMP pages.
+	}
+
+	wp_enqueue_script(
+		'global-js',
+		get_stylesheet_directory_uri() . '/js/global.js',
+		[ 'jquery' ],
+		genesis_get_theme_version(),
+		true
+	);
+
+	wp_enqueue_script(
+		genesis_get_theme_handle() . '-smooth-scroll',
+		get_stylesheet_directory_uri() . '/js/smooth-scroll.js',
+		[ 'jquery' ],
+		genesis_get_theme_version(),
+		true
+	);
+
+}
+
+// Registers default header image.
+register_default_headers(
+	[
+		'child' => [
+			'url'           => my_genesis_get_default_hero_background_image(),
+			'thumbnail_url' => my_genesis_get_default_hero_background_image(),
+			'description'   => __( 'Essence Header Image', 'my-genesis' ),
+		],
+	]
+);
+
 // Adds image sizes.
-add_image_size( 'sidebar-featured', 75, 75, true );
-add_image_size( 'genesis-singular-images', 1500, 1000, true );
-add_image_size( 'blog', '800', '400', true );
-add_image_size( 'portfolio', '570', '390', true );
+add_image_size( 'sidebar-featured-thumb', 70, 60, true );
+add_image_size( 'featured-image', 800, 400, true );
+add_image_size( 'header-hero', 1600, 800, true );
+
+add_filter( 'image_size_names_choose', 'my_genesis_media_library_sizes' );
+/**
+ * Adds image sizes to Media Library.
+ *
+ * @since 1.0.0
+ *
+ * @param array $sizes Array of image sizes and their names.
+ * @return array The modified list of sizes.
+ */
+function my_genesis_media_library_sizes( $sizes ) {
+
+	$sizes['featured-image'] = __( 'Block Featured Image', 'my-genesis' );
+	return $sizes;
+
+}
 
 // Removes header right widget area.
 unregister_sidebar( 'header-right' );
@@ -188,129 +180,75 @@ genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-content-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
 
-// Add Genesis Layouts to Portfolio.
-add_post_type_support( 'portfolio', 'genesis-layouts' );
+// Registers default layout.
+genesis_set_default_layout( 'full-width-content' );
 
-// Move image above post title.
-// remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
-// add_action( 'genesis_entry_header', 'genesis_do_post_image', 8 );
-
-// Register widget areas.
-genesis_register_sidebar(
-	[
-		'id'          => 'topbar',
-		'name'        => __( 'Topbar', 'visual-voyager' ),
-		'description' => __( 'This is the topbar section.', 'visual-voyager' ),
-	]
-);
-
-add_action( 'genesis_before_header', 'visual_voyager_topbar' );
+add_filter( 'genesis_skip_links_output', 'my_genesis_content_skip_links_output' );
 /**
- * Topbar with contact info and social links.
- */
-function visual_voyager_topbar() {
-	genesis_widget_area(
-		'topbar',
-		[
-			'before' => '<div class="site-topbar"><div class="wrap">',
-			'after'  => '</div></div>',
-		]
-	);
-}
-
-add_filter( 'body_class', 'visual_voyager_sticky_header_class' );
-/**
- * Sticky Header.
+ * Changes the target of the "Skip to content" skip link.
  *
- * @param array $classes destination.
- * @return array
- */
-function visual_voyager_sticky_header_class( $classes ) {
-	$sticky_header = get_option( 'visual_voyager_sticky_header' );
-	$classes[]     = ( 'disable' !== $sticky_header ) ? 'sticky-header-active' : '';
-	return $classes;
-}
-
-// Reposition the primary navigation menu.
-remove_action( 'genesis_after_header', 'genesis_do_nav' );
-add_action( 'genesis_header', 'genesis_do_nav', 12 );
-
-add_action( 'genesis_footer', 'visual_voyager_footer_menu', 12 );
-/**
- * Hook menu in footer.
- */
-function visual_voyager_footer_menu() {
-	printf( '<nav %s>', genesis_attr( 'nav-footer' ) );
-	wp_nav_menu(
-		[
-			'theme_location' => 'footer',
-			'container'      => false,
-			'depth'          => 1,
-			'fallback_cb'    => false,
-			'menu_class'     => 'genesis-nav-menu',
-		]
-	);
-	echo '</nav>';
-}
-
-add_filter( 'genesis_attr_nav-footer', 'visual_voyager_footer_nav_attr' );
-/**
- * Nav footer attributes.
+ * @since 1.0.0
  *
- * @param array $attributes destination.
- * @return array
+ * @param array $links The list of skip links.
+ * @return array $links The modified list of skip links.
  */
-function visual_voyager_footer_nav_attr( $attributes ) {
-	$attributes['itemscope'] = true;
-	$attributes['itemtype']  = 'http://schema.org/SiteNavigationElement';
-	return $attributes;
+function my_genesis_content_skip_links_output( $links ) {
+
+	unset( $links['genesis-content'] );
+
+	$new_links = $links;
+	array_splice( $new_links, 1 );
+
+	$new_links['hero-page-title'] = __( 'Skip to content', 'my-genesis' );
+
+	return array_merge( $new_links, $links );
+
 }
 
-add_filter( 'genesis_attr_nav-footer', 'visual_voyager_nav_footer_id' );
+add_filter( 'genesis_skip_links_output', 'my_genesis_skip_links_output' );
 /**
- * Add skip link needs to footer nav.
+ * Removes skip link for primary navigation and adds skip link for footer widgets.
  *
- * @param array $attributes destination.
- * @return array
+ * @since 1.0.0
+ *
+ * @param array $links The list of skip links.
+ * @return array $links The modified list of skip links.
  */
-function visual_voyager_nav_footer_id( $attributes ) {
-	$attributes['id'] = 'genesis-nav-footer';
-	return $attributes;
-}
+function my_genesis_skip_links_output( $links ) {
 
-add_filter( 'genesis_skip_links_output', 'visual_voyager_nav_footer_skip_link' );
-/**
- * Add skip link needs to footer nav.
- *
- * @param array $links destination.
- * @return array
- */
-function visual_voyager_nav_footer_skip_link( $links ) {
-	if ( has_nav_menu( 'footer' ) ) {
-		$links['genesis-nav-footer'] = __( 'Skip to footer navigation', 'visual-voyager' );
+	if ( isset( $links['genesis-nav-primary'] ) ) {
+		unset( $links['genesis-nav-primary'] );
 	}
-	return $links;
+
+	$new_links = $links;
+	array_splice( $new_links, 3 );
+
+	if ( is_active_sidebar( 'after-content-featured' ) ) {
+		$new_links['after-content-featured'] = __( 'Skip to footer', 'my-genesis' );
+	}
+
+	return array_merge( $new_links, $links );
+
 }
 
-add_action( 'genesis_footer', 'visual_voyager_scrollup', 12 );
-/**
- * Scroll to top link.
- */
-function visual_voyager_scrollup() {
-	echo '<div class="scroll-up">';
-	echo '<a href="#" class="scrollup"></a>';
-	echo '</div>';
-}
+// Repositions primary navigation menu.
+remove_action( 'genesis_after_header', 'genesis_do_nav' );
+add_action( 'genesis_header', 'genesis_do_nav', 13 );
 
+// Repositions the secondary navigation menu.
+remove_action( 'genesis_after_header', 'genesis_do_subnav' );
+add_action( 'genesis_footer', 'genesis_do_subnav', 5 );
+
+add_filter( 'wp_nav_menu_args', 'my_genesis_secondary_menu_args' );
 /**
- * Reduces secondary navigation menu to one level depth.
+ * Reduces the secondary navigation menu to one level depth.
  *
- * @since 2.2.3
+ * @since 1.0.0
  *
- * @param array $args Original menu options.
- * @return array Menu options with depth set to 1.
+ * @param array $args The WP navigation menu arguments.
+ * @return array The modified menu arguments.
  */
-function visual_voyager_secondary_menu_args( $args ) {
+function my_genesis_secondary_menu_args( $args ) {
 
 	if ( 'secondary' === $args['theme_location'] ) {
 		$args['depth'] = 1;
@@ -320,56 +258,284 @@ function visual_voyager_secondary_menu_args( $args ) {
 
 }
 
-add_filter( 'genesis_author_box_gravatar_size', 'visual_voyager_author_box_gravatar' );
+add_filter( 'genesis_search_text', 'my_genesis_search_button_text' );
 /**
- * Modifies size of the Gravatar in the author box.
+ * Changes search form placeholder text.
  *
- * @since 2.2.3
+ * @since 1.0.0
  *
- * @param int $size Original icon size.
- * @return int Modified icon size.
+ * @param string $text The search form placeholder text.
+ * @return string The modified search form placeholder text.
  */
-function visual_voyager_author_box_gravatar( $size ) {
+function my_genesis_search_button_text( $text ) {
+
+	return esc_attr( 'Search' );
+
+}
+
+add_filter( 'get_the_content_limit', 'my_genesis_content_limit_read_more_markup', 10, 3 );
+/**
+ * Modifies the generic more link markup for posts.
+ *
+ * @since 1.0.0
+ *
+ * @param string $output The current full HTML.
+ * @param string $content The content HTML.
+ * @param string $link The link HTML.
+ * @return string The new more link HTML.
+ */
+function my_genesis_content_limit_read_more_markup( $output, $content, $link ) {
+
+	if ( is_page_template( 'page_blog.php' ) || is_home() || is_archive() || is_search() ) {
+		$link = sprintf( '<a href="%s" class="more-link button text">%s</a>', get_the_permalink(), genesis_a11y_more_link( __( 'Continue Reading', 'my-genesis' ) ) );
+	}
+
+	$output = sprintf( '<p>%s &#x02026;</p><p class="more-link-wrap">%s</p>', $content, str_replace( '&#x02026;', '', $link ) );
+
+	return $output;
+
+}
+
+add_filter( 'genesis_author_box_gravatar_size', 'my_genesis_author_box_gravatar' );
+/**
+ * Modifies the size of the Gravatar in the author box.
+ *
+ * @since 1.0.0
+ *
+ * @param int $size Current Gravatar size.
+ * @return int New size.
+ */
+function my_genesis_author_box_gravatar( $size ) {
 
 	return 90;
 
 }
 
-add_filter( 'genesis_comment_list_args', 'visual_voyager_comments_gravatar' );
+add_filter( 'genesis_comment_list_args', 'my_genesis_comments_gravatar' );
 /**
- * Modifies size of the Gravatar in the entry comments.
+ * Modifies the size of the Gravatar in the entry comments.
  *
- * @since 2.2.3
+ * @since 1.0.0
  *
- * @param array $args Gravatar settings.
- * @return array Gravatar settings with modified size.
+ * @param array $args The comment list arguments.
+ * @return array Arguments with new avatar size.
  */
-function visual_voyager_comments_gravatar( $args ) {
+function my_genesis_comments_gravatar( $args ) {
 
 	$args['avatar_size'] = 60;
 	return $args;
 
 }
 
-/** Force full width layout on all archive pages*/
-add_filter( 'genesis_pre_get_option_site_layout', 'visual_voyager_full_width_layout_archives' );
+// Moves image above post title.
+remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
+add_action( 'genesis_entry_header', 'genesis_do_post_image', 1 );
+
+// Repositions the breadcrumbs.
+remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
+add_action( 'genesis_after_header', 'genesis_do_breadcrumbs', 90 );
+
+// Removes the entry footer.
+remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_open', 5 );
+remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_close', 15 );
+
+add_filter( 'genesis_post_info', 'my_genesis_modify_post_info' );
+/**
+ * Modifies the meta information in the entry header.
+ *
+ * @since 1.0.0
+ *
+ * @param string $post_info Current post info.
+ * @return string New post info.
+ */
+function my_genesis_modify_post_info( $post_info ) {
+
+	global $post;
+
+	setup_postdata( $post );
+
+	if ( is_single() ) {
+		$post_info = '[post_categories before="" after=" &#47;"] [post_date] <i class="byline">' . __( 'by', 'my-genesis' ) . '</i> [post_author_posts_link] [post_comments before="&#47; "] [post_edit]';
+	} else {
+		$post_info = '[post_categories before=""]';
+	}
+	return $post_info;
+
+}
+
+add_filter( 'genesis_customizer_theme_settings_config', 'my_genesis_remove_entry_meta_settings' );
+/**
+ * Remove Entry Meta options from the Customizer.
+ *
+ * Shortcodes such as `[post_author_posts_link]` do not currently work outside
+ * of the loop. See https://github.com/studiopress/genesis/issues/2550.
+ *
+ * @param array $config The default Theme Settings config.
+ * @return array Config with sections removed.
+ */
+function my_genesis_remove_entry_meta_settings( $config ) {
+
+	unset( $config['genesis']['sections']['genesis_single']['controls']['entry_meta_before_content'] );
+	unset( $config['genesis']['sections']['genesis_single']['controls']['entry_meta_after_content'] );
+
+	return $config;
+
+}
+
+add_filter( 'comment_author_says_text', 'my_genesis_comment_author_says_text' );
+/**
+ * Modifies the author says text in comments.
+ *
+ * @since 1.0.0
+ *
+ * @return string New author says text.
+ */
+function my_genesis_comment_author_says_text() {
+
+	return '';
+
+}
 
 /**
- * Change archives to use full width layout.
+ * Counts used widgets in given sidebar.
  *
- * @author Brad Dalton
- * @link http://wpsites.net/web-design/change-layout-genesis/
+ * @since 1.0.0
  *
- * @param string $opt destination.
- * @return string
+ * @param string $id The sidebar ID.
+ * @return int|void The number of widgets, or nothing.
  */
-function visual_voyager_full_width_layout_archives( $opt ) {
+function my_genesis_count_widgets( $id ) {
 
-	if ( is_archive() ) {
+	$sidebars_widgets = wp_get_sidebars_widgets();
 
-		$opt = 'full-width-content';
-		return $opt;
-
+	if ( isset( $sidebars_widgets[ $id ] ) ) {
+		return count( $sidebars_widgets[ $id ] );
 	}
 
 }
+
+/**
+ * Gives class name based on widget count.
+ *
+ * @since 1.0.0
+ *
+ * @param string $id The widget ID.
+ * @return string The class.
+ */
+function my_genesis_widget_area_class( $id ) {
+
+	$count = my_genesis_count_widgets( $id );
+
+	$class = '';
+
+	if ( 1 === $count ) {
+		$class .= ' widget-full';
+	} elseif ( 0 === $count % 3 ) {
+		$class .= ' widget-thirds';
+	} elseif ( 0 === $count % 4 ) {
+		$class .= ' widget-fourths';
+	} elseif ( 1 === $count % 2 ) {
+		$class .= ' widget-halves uneven';
+	} else {
+		$class .= ' widget-halves';
+	}
+
+	return $class;
+
+}
+
+/**
+ * Helper function to handle outputting widget markup and classes.
+ *
+ * @since 1.0.0
+ *
+ * @param string $id The id of the widget area.
+ */
+function my_genesis_do_widget( $id ) {
+
+	$count   = my_genesis_count_widgets( $id );
+	$columns = my_genesis_widget_area_class( $id );
+
+	genesis_widget_area(
+		$id,
+		[
+			'before' => "<div id=\"$id\" class=\"$id\"><div class=\"flexible-widgets widget-area $columns\"><div class=\"wrap\">",
+			'after'  => '</div></div></div>',
+		]
+	);
+
+}
+
+add_action( 'genesis_before_footer', 'my_genesis_after_content_featured', 13 );
+/**
+ * Adds a flexible featured widget area above the footer.
+ *
+ * @since 1.0.0
+ */
+function my_genesis_after_content_featured() {
+
+	if ( is_active_sidebar( 'after-content-featured' ) ) {
+		my_genesis_do_widget( 'after-content-featured' );
+	}
+
+}
+
+add_action( 'genesis_before_footer', 'my_genesis_front_quote_widget', 15 );
+/**
+ * Adds the before footer widget area.
+ *
+ * @since 1.0.0
+ */
+function my_genesis_front_quote_widget() {
+
+	if ( ! is_front_page() ) {
+		return;
+	}
+
+	if ( is_active_sidebar( 'front-page-featured' ) ) {
+		my_genesis_do_widget( 'front-page-featured' );
+	}
+
+}
+
+add_action( 'genesis_before_footer', 'my_genesis_footer_cta', 17 );
+/**
+ * Adds the above footer widget area.
+ *
+ * @since 1.0.0
+ */
+function my_genesis_footer_cta() {
+
+	genesis_widget_area(
+		'footer-cta',
+		[
+			'before' => '<div id="footer-cta" class="footer-cta"><div class="wrap"><div class="widget-area">',
+			'after'  => '</div></div></div>',
+		]
+	);
+
+}
+
+// Registers widget areas.
+genesis_register_sidebar(
+	[
+		'id'          => 'front-page-featured',
+		'name'        => __( 'Front Page Featured', 'my-genesis' ),
+		'description' => __( 'This is the front page featured section.', 'my-genesis' ),
+	]
+);
+genesis_register_sidebar(
+	[
+		'id'          => 'after-content-featured',
+		'name'        => __( 'After Content Featured', 'my-genesis' ),
+		'description' => __( 'This is the featured section that displays after the content area.', 'my-genesis' ),
+	]
+);
+genesis_register_sidebar(
+	[
+		'id'          => 'footer-cta',
+		'name'        => __( 'Footer CTA', 'my-genesis' ),
+		'description' => __( 'This is the call to action section above the footer.', 'my-genesis' ),
+	]
+);

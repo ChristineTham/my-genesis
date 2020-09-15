@@ -1,15 +1,15 @@
 <?php
 /**
- * Visual Voyager.
+ * My Genesis
  *
  * Block example page content optionally installed after theme activation.
  *
  * Visit `/wp-admin/admin.php?page=genesis-getting-started` to trigger import.
  *
- * @package Visual Voyager
- * @author  HelloTham
+ * @package My Genesis
+ * @author  Chris Tham
  * @license GPL-2.0-or-later
- * @link    https://www.hellotham.com/
+ * @link    https://christham.net
  */
 
 return <<<CONTENT

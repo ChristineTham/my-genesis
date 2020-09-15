@@ -5,16 +5,16 @@
  * Assists with the creation of a WPForms form, and the replacement of contact
  * page content with a working contact form block during one-click theme setup.
  *
- * @package StudioPress
- * @author  HelloTham
+ * @package My_Genesis
+ * @author  Chris Tham
  * @license GPL-2.0-or-later
- * @link    https://www.hellotham.com/
+ * @link    https://christham.net/
  */
 
 /**
  * Creates a WPForms form if one added by a StudioPress theme does not exist.
  *
- * @since 2.10.0
+ * @since 1.2.0
  *
  * @return int|null ID of form if one exists or gets created. Null if form creation fails or WPForms is inactive.
  */
@@ -52,7 +52,7 @@ function studiopress_maybe_create_wpforms_form() { // phpcs:ignore -- studiopres
 
 	// Creates a form using the WPForms 'contact' template.
 	$new_form_id = wpforms()->form->add(
-		esc_html__( 'Simple Contact Form', 'visual-voyager' ),
+		esc_html__( 'Simple Contact Form', 'my-genesis' ),
 		[],
 		[
 			'template' => 'contact',
@@ -70,7 +70,7 @@ function studiopress_maybe_create_wpforms_form() { // phpcs:ignore -- studiopres
 /**
  * Replace contact page placeholder content with a block displaying the form.
  *
- * @since 2.10.0
+ * @since 1.2.0
  *
  * @param array $content The content config.
  * @param array $imported_posts Imported posts with content short name as keys and IDs as values.

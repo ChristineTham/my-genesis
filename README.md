@@ -1,10 +1,12 @@
-# Visual Voyager Theme
+# My Genesis Theme
+
+Chris Tham personal website child theme for the Genesis Framework.
 
 ![screenshot](https://github.com/hellotham/visual-voyager/raw/develop/screenshot.png)
 
-GitHub project link: https://github.com/hellotham/visual-voyager/.
+GitHub project link: https://github.com/ChristineTham/my-genesis/.
 
-Live site: https://visualvoyager.net
+Live site: https://christham.net
 
 ## Installation Instructions
 

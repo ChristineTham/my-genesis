@@ -1,11 +1,11 @@
 <?php
 /**
- * Visual Voyager child theme.
+ * Genesis Sample child theme.
  *
- * @package Visual Voyager
- * @author  HelloTham
+ * @package My_Genesis
+ * @author  Chris Tham
  * @license GPL-2.0-or-later
- * @link    https://my.studiopress.com/themes/visual-voyager/
+ * @link    https://christham.net
  */
 
 /**
@@ -13,16 +13,15 @@
  */
 return [
 	'script' => [
-		'menuClasses' => [
-			'mainMenu' => __( 'Menu', 'visual-voyager' ),
-			'subMenu'  => __( 'Menu', 'visual-voyager' ),
-			'others'   => [
+		'menuIconClass'       => 'ionicons-before ion-ios-menu',
+		'menuIconOpenedClass' => 'ionicons-before ion-ios-menu',
+		'subMenuIconClass'    => 'ionicons-before ion-ios-arrow-down',
+		'menuClasses'         => [
+			'combine' => [
 				'.nav-primary',
-				'.nav-secondary',
+				'.nav-off-screen',
 			],
+			'others'  => [],
 		],
-	],
-	'extras' => [
-		'media_query_width' => '1500px',
 	],
 ];

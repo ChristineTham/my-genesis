@@ -1,9 +1,9 @@
 {
-	"name": "visual-voyager",
-	"description": "Visual Voyager WordPress Genesis Child theme, based on Genesis Sample.",
+	"name": "my-genesis",
+	"description": "Chris Tham personal website child theme for the Genesis Framework.",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/hellotham/visual-voyager/"
+		"url": "https://github.com/ChristineTham/my-genesis/"
 	},
 	"license": "GPL-2.0-or-later",
 	"devDependencies": {
@@ -42,8 +42,8 @@
 		"last 2 Opera versions"
 	],
 	"theme": {
-		"name": "Visual Voyager",
-		"uri": "https://visualvoyager.net/",
+		"name": "My Genesis",
+		"uri": "https://christham.net/",
 		"description": "Visual Voyager WordPress Genesis Child theme, based on Genesis Sample.",
 		"author": "HelloTham",
 		"authoruri": "https://www.hellotham.com/",
