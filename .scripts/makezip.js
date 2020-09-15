@@ -34,8 +34,7 @@ const excludes = [
 	"package-lock.json",
 	"package.json",
 	"phpcs.xml.dist",
-	"vendor",
-	"wip"
+	"vendor"
 ];
 
 // Creates a file to stream archive data to.
