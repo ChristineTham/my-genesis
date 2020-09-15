@@ -20,7 +20,7 @@
  */
 function my_genesis_customizer_get_default_link_color() {
 
-	return '#a86500';
+	return '#ccabc1';
 
 }
 
@@ -34,7 +34,7 @@ function my_genesis_customizer_get_default_link_color() {
  */
 function my_genesis_customizer_get_default_accent_color() {
 
-	return '#a86500';
+	return '#ccabc1';
 
 }
 

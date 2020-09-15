@@ -59,8 +59,8 @@ return <<<CONTENT
 <ul itemprop="description" class="wp-block-atomic-blocks-ab-pricing-table-features ab-pricing-table-features ab-list-border-none ab-list-border-width-1" style="padding-top:15px;padding-right:20px;padding-bottom:15px;padding-left:20px"><li> Logo concept<br> 5-page web design<br> 3 hours of training<br> 2 Email templates </li></ul>
 <!-- /wp:atomic-blocks/ab-pricing-table-features -->
 
-<!-- wp:atomic-blocks/ab-pricing-table-button {"buttonText":"Get Started","buttonBackgroundColor":"#a86500","buttonShape":"ab-button-shape-square","paddingTop":15,"paddingBottom":35} -->
-<div class="wp-block-atomic-blocks-ab-pricing-table-button ab-pricing-table-button" style="padding-top:15px;padding-right:20px;padding-bottom:35px;padding-left:20px"><div class="ab-block-button"><a class="ab-button ab-button-shape-square ab-button-size-medium" style="color:#ffffff;background-color:#a86500">Get Started</a></div></div>
+<!-- wp:atomic-blocks/ab-pricing-table-button {"buttonText":"Get Started","buttonBackgroundColor":"#ccabc1","buttonShape":"ab-button-shape-square","paddingTop":15,"paddingBottom":35} -->
+<div class="wp-block-atomic-blocks-ab-pricing-table-button ab-pricing-table-button" style="padding-top:15px;padding-right:20px;padding-bottom:35px;padding-left:20px"><div class="ab-block-button"><a class="ab-button ab-button-shape-square ab-button-size-medium" style="color:#ffffff;background-color:#ccabc1">Get Started</a></div></div>
 <!-- /wp:atomic-blocks/ab-pricing-table-button --></div></div>
 <!-- /wp:atomic-blocks/ab-pricing-table --></div></div>
 <!-- /wp:atomic-blocks/ab-pricing -->
@@ -111,8 +111,8 @@ return <<<CONTENT
 <ul itemprop="description" class="wp-block-atomic-blocks-ab-pricing-table-features ab-pricing-table-features ab-list-border-none ab-list-border-width-1" style="font-size:16px;padding-top:15px;padding-right:20px;padding-bottom:15px;padding-left:20px"><li> Logo concept<br> 5-page web design<br> 3 hours of training<br> 2 Email templates <br><del>eCommerce setup </del> </li></ul>
 <!-- /wp:atomic-blocks/ab-pricing-table-features -->
 
-<!-- wp:atomic-blocks/ab-pricing-table-button {"buttonText":"Get Started","buttonBackgroundColor":"#a86500","buttonShape":"ab-button-shape-square","paddingTop":15,"paddingBottom":35} -->
-<div class="wp-block-atomic-blocks-ab-pricing-table-button ab-pricing-table-button" style="padding-top:15px;padding-right:20px;padding-bottom:35px;padding-left:20px"><div class="ab-block-button"><a class="ab-button ab-button-shape-square ab-button-size-medium" style="color:#ffffff;background-color:#a86500">Get Started</a></div></div>
+<!-- wp:atomic-blocks/ab-pricing-table-button {"buttonText":"Get Started","buttonBackgroundColor":"#ccabc1","buttonShape":"ab-button-shape-square","paddingTop":15,"paddingBottom":35} -->
+<div class="wp-block-atomic-blocks-ab-pricing-table-button ab-pricing-table-button" style="padding-top:15px;padding-right:20px;padding-bottom:35px;padding-left:20px"><div class="ab-block-button"><a class="ab-button ab-button-shape-square ab-button-size-medium" style="color:#ffffff;background-color:#ccabc1">Get Started</a></div></div>
 <!-- /wp:atomic-blocks/ab-pricing-table-button -->
 
 </div></div>
@@ -209,8 +209,8 @@ return <<<CONTENT
 <ul itemprop="description" class="wp-block-atomic-blocks-ab-pricing-table-features ab-pricing-table-features ab-list-border-none ab-list-border-width-1" style="font-size:16px;padding-top:15px;padding-right:20px;padding-bottom:15px;padding-left:20px"><li> Logo concept<br> 10-page web design<br> 5 hours of training<br> 2 Email templates<br> eCommerce setup <br><del>Search optimization</del> </li></ul>
 <!-- /wp:atomic-blocks/ab-pricing-table-features -->
 
-<!-- wp:atomic-blocks/ab-pricing-table-button {"buttonText":"Get Started","buttonBackgroundColor":"#a86500","buttonShape":"ab-button-shape-square","paddingTop":15,"paddingBottom":35} -->
-<div class="wp-block-atomic-blocks-ab-pricing-table-button ab-pricing-table-button" style="padding-top:15px;padding-right:20px;padding-bottom:35px;padding-left:20px"><div class="ab-block-button"><a class="ab-button ab-button-shape-square ab-button-size-medium" style="color:#ffffff;background-color:#a86500">Get Started</a></div></div>
+<!-- wp:atomic-blocks/ab-pricing-table-button {"buttonText":"Get Started","buttonBackgroundColor":"#ccabc1","buttonShape":"ab-button-shape-square","paddingTop":15,"paddingBottom":35} -->
+<div class="wp-block-atomic-blocks-ab-pricing-table-button ab-pricing-table-button" style="padding-top:15px;padding-right:20px;padding-bottom:35px;padding-left:20px"><div class="ab-block-button"><a class="ab-button ab-button-shape-square ab-button-size-medium" style="color:#ffffff;background-color:#ccabc1">Get Started</a></div></div>
 <!-- /wp:atomic-blocks/ab-pricing-table-button --></div></div>
 <!-- /wp:atomic-blocks/ab-pricing-table -->
 

@@ -96,7 +96,7 @@ function my_genesis_enqueue_scripts_styles() {
 
 	wp_enqueue_style(
 		'essence-fonts',
-		'https://fonts.googleapis.com/css?family=Alegreya+Sans:400,400i,700|Lora:400,700&display=swap',
+		'https://fonts.googleapis.com/css?family=Lato:400,400i,700|Raleway:400,700&display=swap',
 		[],
 		genesis_get_theme_version()
 	);
