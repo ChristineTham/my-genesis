@@ -1,7 +1,7 @@
 {
 	"name": "ChristineTham/my-genesis",
 	"type": "wordpress-theme",
-	"description": "Chris Tham personal website child theme for the Genesis Framework",
+	"description": "Chris Tham personal website child theme for the Genesis Framework. Derived from Essence Pro, but with Lato/Raleway fonts and a Millennial Pink colour pallette.",
 	"homepage": "https://github.com/ChristineTham/my-genesis/",
 	"license": "GPL-2.0-or-later",
 	"authors": [

@@ -228,7 +228,7 @@
 }
 
 .site-container .wp-block-button .wp-block-button__link {
-	background-color: #222;
+	background-color: #be9cc1;
 	border: none;
 	border-radius: 0;
 	color: #fff;
@@ -246,6 +246,7 @@
 	background-color: transparent;
 	border-radius: 0;
 	border: 2px solid currentColor;
+	color: #be9cc1;
 }
 
 .site-container .wp-block-button.is-style-outline .wp-block-button__link.has-background {
@@ -257,7 +258,7 @@
 .site-container .wp-block-button.is-style-outline .wp-block-button__link.has-background:focus,
 .site-container .wp-block-button.is-style-outline .wp-block-button__link.has-background:hover {
 	border-color: currentColor;
-	color: #222;
+	color: #b0879b;
 }
 
 .site-container .ab-button:focus,
@@ -289,7 +290,7 @@
 
 .site-container .is-style-divider-button .wp-block-button__link,
 .site-container .is-style-divider-button .wp-block-button.is-style-outline .wp-block-button__link {
-	background-color: #f4f4f4;
+	background-color: #f0eee9;
 	display: inline-block;
 	position: relative;
 	z-index: 10;
@@ -622,7 +623,7 @@ hr.wp-block-separator {
 
 .ab-block-post-grid header .ab-block-post-grid-title a:focus,
 .ab-block-post-grid header .ab-block-post-grid-title a:hover {
-	color: #ccabc1;
+	color: #f7caca;
 	text-decoration: none;
 }
 

@@ -1,6 +1,6 @@
 {
 	"name": "my-genesis",
-	"description": "Chris Tham personal website child theme for the Genesis Framework.",
+	"description": "Chris Tham personal website child theme for the Genesis Framework. Derived from Essence Pro, but with Lato/Raleway fonts and a Millennial Pink colour pallette.",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ChristineTham/my-genesis/"
@@ -44,7 +44,7 @@
 	"theme": {
 		"name": "My Genesis",
 		"uri": "https://christham.net/",
-		"description": "Visual Voyager WordPress Genesis Child theme, based on Genesis Sample.",
+		"description": "Chris Tham personal website child theme for the Genesis Framework. Derived from Essence Pro, but with Lato/Raleway fonts and a Millennial Pink colour pallette.",
 		"author": "Chris Tham",
 		"authoruri": "https://christham.net/",
 		"version": "1.0.0",

@@ -1,5 +1,5 @@
 body {
-	color: #333;
+	color: #615f5f;
 	font-family: "Lato", sans-serif;
 	font-size: 20px;
 	font-weight: 400;
@@ -11,13 +11,13 @@ p,
 ul,
 ol,
 dl {
-	color: #333;
+	color: #615f5f;
 	font-size: 20px;
 	line-height: 1.625 !important;
 }
 
 .page-template-blocks {
-	background-color: #f4f4f4;
+	background-color: #f2e3e3;
 }
 
 /* Regular content width.
@@ -68,14 +68,14 @@ dl {
 ---------------------------------------------------------------------------- */
 
 a {
-	color: #ccabc1;
+	color: #be9cc1;
 	font-weight: 700;
 	text-decoration: underline;
 }
 
 a:focus,
 a:hover {
-	color: #333;
+	color: #d2c4d6;
 	text-decoration: none;
 }
 
@@ -89,7 +89,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: #111;
+	color: #f7caca;
 	font-family: Raleway, serif;
 	font-weight: 400;
 	line-height: 1.2;
@@ -122,7 +122,7 @@ h6 {
 }
 
 .editor-post-title__block .editor-post-title__input {
-	color: #111;
+	color: #615f5f;
 	font-family: Raleway, serif;
 	font-size: 60px;
 	font-weight: 400;
@@ -196,7 +196,7 @@ p.has-text-color a:hover {
 }
 
 .wp-block-pullquote blockquote::before {
-	color: #222;
+	color: #615f5f;
 	font-size: 60px;
 	left: 0;
 	text-align: center;
@@ -305,7 +305,7 @@ figcaption {
 ---------------------------------------------------------------------------- */
 
 .wp-block-image figcaption {
-	color: #666;
+	color: #615f5f;
 	font-size: 14px;
 	font-style: italic;
 	margin-bottom: 30px;
@@ -327,7 +327,7 @@ figcaption {
 
 hr.wp-block-separator {
 	border: none;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #f7caca;
 	margin: 1.65em auto;
 }
 
@@ -362,15 +362,15 @@ table {
 }
 
 .wp-block-table tr {
-	border-top: 1px solid #eee;
+	border-top: 1px solid #f7caca;
 }
 
 .wp-block-table tr:last-of-type {
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #f7caca;
 }
 
 .wp-block-table tbody {
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #f7caca;
 }
 
 .wp-block-table.is-style-stripes {
@@ -381,18 +381,18 @@ table {
 ---------------------------------------------------------------------------- */
 
 .ab-button {
-	background-color: #ccabc1;
+	background-color: #be9cc1;
 	font-weight: 700;
 	text-transform: uppercase;
 }
 
 .ab-button:hover {
-	background-color: #333;
+	background-color: #b0879b;
 	color: #fff;
 }
 
 .wp-block-button .wp-block-button__link {
-	background-color: #222;
+	background-color: #f7caca;
 	border: none;
 	border-radius: 0;
 	cursor: pointer;
@@ -409,6 +409,7 @@ table {
 	border: 2px solid currentColor;
 	border-radius: 0;
 	padding: 14px 28px;
+	color: #be9cc1;
 }
 
 .ab-button:focus,
@@ -582,8 +583,8 @@ table {
 }
 
 .ab-block-newsletter input {
-	background-color: #fff;
-	border: 1px solid #ddd;
+	background-color: #f7caca;
+	border: 1px solid #be9cc1;
 	border-radius: 0;
 	color: #333;
 	font-size: 18px;
@@ -615,6 +616,7 @@ table {
 .ab-block-post-grid .is-grid article {
 	background-color: #fff;
 	box-shadow: 0 25px 40px 0 rgba(0, 0, 0, 0.05);
+	border-radius: 10px;
 }
 
 .ab-block-post-grid .is-list {
@@ -659,14 +661,14 @@ table {
 .ab-block-post-grid a.ab-block-post-grid-more-link:focus,
 .ab-block-post-grid a.ab-block-post-grid-more-link:hover {
 	border-bottom: 2px solid #666;
-	color: #333;
+	color: #b0879b;
 	padding: 16px 0 6px 0;
 	text-decoration: none;
 }
 
 .ab-block-post-grid-title,
 .ab-block-post-grid-title a {
-	color: #111;
+	color: #be9cc1;
 	font-weight: 400;
 	letter-spacing: -1px;
 }
@@ -680,7 +682,7 @@ table {
 }
 
 .ab-block-post-grid-byline {
-	color: #767676;
+	color: #615f5f;
 	font-size: 13px;
 	font-weight: 700;
 	letter-spacing: 3px;

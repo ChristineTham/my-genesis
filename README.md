@@ -1,6 +1,6 @@
 # My Genesis Theme
 
-Chris Tham personal website child theme for the Genesis Framework.
+Chris Tham personal website child theme for the Genesis Framework. Derived from Essence Pro, but with Lato/Raleway fonts and a Millennial Pink colour pallette.
 
 ![screenshot](https://github.com/hellotham/visual-voyager/raw/develop/screenshot.png)
 

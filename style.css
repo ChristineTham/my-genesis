@@ -1,7 +1,7 @@
 /*
 Theme Name: My Genesis
 Theme URI: https://christham.net
-Description: Chris Tham personal website child theme for the Genesis Framework.
+Description: Chris Tham personal website child theme for the Genesis Framework. Derived from Essence Pro, but with Lato/Raleway fonts and a Millennial Pink colour pallette.
 Author: Chris Tham
 Author URI: https://christham.net/
 
@@ -158,7 +158,7 @@ input[type="search"] {
 
 body {
 	background-color: #f2e3e3;
-	color: #333;
+	color: #615f5f;
 	font-family: "Lato", sans-serif;
 	font-size: 20px;
 	-webkit-font-smoothing: antialiased;
@@ -182,13 +182,13 @@ textarea:focus,
 }
 
 a {
-	color: #ccabc1;
+	color: #be9cc1;
 	text-decoration: underline;
 }
 
 a:focus,
 a:hover {
-	color: #333;
+	color: #b0879b;
 	text-decoration: none;
 }
 
@@ -212,7 +212,7 @@ hr {
 	border-collapse: collapse;
 	border-bottom: 1px solid currentColor;
 	clear: both;
-	color: #eee;
+	color: #f7caca;
 	margin: 1.65em auto;
 }
 
@@ -222,8 +222,8 @@ strong {
 }
 
 mark {
-	background-color: #ddd;
-	color: #000;
+	background-color: #f0eee9;
+	color: #f7caca;
 }
 
 blockquote {
@@ -254,7 +254,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: #111;
+	color: #f7caca;
 	font-family: Raleway, serif;
 	font-weight: 400;
 	line-height: 1.2;
@@ -290,7 +290,7 @@ h6 {
 }
 
 h6 {
-	color: #ccabc1;
+	color: #93a9d1;
 	font-size: 16px;
 }
 
@@ -388,7 +388,7 @@ figure {
 }
 
 .gallery img {
-	border: 1px solid #eee;
+	border: 1px solid #f0eee9;
 	height: auto;
 	padding: 4px;
 }
@@ -404,9 +404,9 @@ figure {
 input,
 select,
 textarea {
-	background-color: #fff;
-	border: 1px solid #ddd;
-	color: #333;
+	background-color: #f2e3e3;
+	border: 1px solid #d2c4d6;
+	color: #615f5f;
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 1.625;
@@ -416,7 +416,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-	border: 1px solid #999;
+	border: 1px solid #be9cc1;
 	outline: none;
 }
 
@@ -427,17 +427,17 @@ input[type="radio"] {
 }
 
 ::-ms-input-placeholder {
-	color: #333;
+	color: #615f5f;
 	opacity: 1;
 }
 
 :-ms-input-placeholder {
-	color: #333;
+	color: #615f5f;
 	opacity: 1;
 }
 
 ::placeholder {
-	color: #333;
+	color: #615f5f;
 	opacity: 1;
 }
 
@@ -452,7 +452,7 @@ input[type="submit"],
 .more-link,
 .site-container div.wpforms-container-full .wpforms-form input[type="submit"],
 .site-container div.wpforms-container-full .wpforms-form button[type="submit"] {
-	background-color: #ccabc1;
+	background-color: #be9cc1;
 	border-width: 0;
 	color: #fff;
 	cursor: pointer;
@@ -473,8 +473,8 @@ input[type="button"].primary,
 input[type="reset"].primary,
 input[type="submit"].primary,
 .button.primary {
-	background-color: #fff;
-	color: #333;
+	background-color: #f0eee9;
+	color: #615f5f;
 }
 
 a.button:focus,
@@ -491,7 +491,7 @@ input:hover[type="submit"],
 .site-container div.wpforms-container-full .wpforms-form input[type="submit"]:hover,
 .site-container div.wpforms-container-full .wpforms-form button[type="submit"]:focus,
 .site-container div.wpforms-container-full .wpforms-form button[type="submit"]:hover {
-	background-color: #333;
+	background-color: #b0879b;
 	border-width: 0;
 	color: #fff;
 }
@@ -513,8 +513,8 @@ input[type="submit"].secondary,
 .button.secondary,
 .featured-content .more-from-category a {
 	background-color: transparent;
-	border: 2px solid #999;
-	color: #666;
+	border: 2px solid #d2c4d6;
+	color: #b0879b;
 }
 
 button.secondary:focus,
@@ -532,8 +532,8 @@ input[type="submit"].secondary:hover,
 .featured-content .more-from-category a:focus,
 .featured-content .more-from-category a:hover {
 	background-color: transparent;
-	border: 2px solid #666;
-	color: #333;
+	border: 2px solid #be9cc1;
+	color: #b0879b;
 }
 
 a.button.small,
@@ -565,12 +565,12 @@ a.more-link.button.text,
 .more-link {
 	background-color: transparent;
 	box-shadow: none;
-	border-bottom: 2px solid #e5cedb;
+	border-bottom: 2px solid #f7caca;
 	border-left: 0;
 	border-right: 0;
 	border-radius: 0;
 	border-top: 0;
-	color: #e5cedb;
+	color: #f7caca;
 	font-weight: 700;
 	letter-spacing: 2px;
 	padding: 16px 0 6px 0;
@@ -594,8 +594,8 @@ a.more-link.button.text:hover,
 .more-link:hover {
 	background-color: transparent;
 	box-shadow: none;
-	border-bottom: 2px solid #666;
-	color: #333;
+	border-bottom: 2px solid #615f5f;
+	color: #615f5f;
 	padding: 16px 0 6px 0;
 	text-decoration: none;
 }
@@ -619,9 +619,9 @@ a.more-link.button.text {
 .site-container input[type="reset"]:disabled:hover,
 .site-container input[type="submit"]:disabled,
 .site-container input[type="submit"]:disabled:hover {
-	background-color: #eee;
+	background-color: #f0eee9;
 	border-width: 0;
-	color: #666;
+	color: #a8b0ae;
 	cursor: not-allowed;
 }
 
@@ -642,7 +642,7 @@ table {
 }
 
 tbody {
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #f7caca;
 }
 
 td,
@@ -657,7 +657,7 @@ td {
 }
 
 tr {
-	border-top: 1px solid #eee;
+	border-top: 1px solid #f7caca;
 }
 
 th {
@@ -684,10 +684,10 @@ th {
 .screen-reader-shortcut:focus,
 .screen-reader-text:focus,
 .widget_search input[type="submit"]:focus {
-	background-color: #fff;
+	background-color: #f7caca;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
-	color: #333;
+	color: #615f5f;
 	display: block;
 	font-size: 1em;
 	font-weight: 700;
@@ -723,13 +723,14 @@ th {
 .page .site-inner,
 .single .site-inner {
 	background-color: #fff;
+	border-radius: 10px;
 	box-shadow: 0 25px 40px 0 rgba(0, 0, 0, 0.05);
 }
 
 .error404 .site-inner::before,
 .page .site-inner::before,
 .single .site-inner::before {
-	background-color: #ccabc1;
+	background-color: #f7caca;
 	content: "";
 	display: block;
 	height: 100px;
@@ -929,7 +930,7 @@ th {
 
 .author-box {
 	background-color: #f5f5f5;
-	color: #333;
+	color: #615f5f;
 	padding: 60px;
 	text-align: center;
 }
@@ -1001,13 +1002,13 @@ th {
 
 .entry-title a,
 .sidebar .widget-title a {
-	color: #111;
+	color: #be9cc1;
 	text-decoration: none;
 }
 
 .entry-title a:focus,
 .entry-title a:hover {
-	color: #ccabc1;
+	color: #b0879b;
 }
 
 .featured-content .widget-title .more-posts-title,
@@ -1100,6 +1101,17 @@ figcaption,
 	margin: 0 0 28px;
 }
 
+.entry-image {
+	border-radius: 10px;
+}
+
+.wp-block-cover {
+	color: #fff;
+}
+
+.wp-block-button {
+	color: #fff;
+}
 
 /* Widgets
 ---------------------------------------------------------------------------- */
@@ -1365,11 +1377,11 @@ figcaption,
 }
 
 .sidebar .featured-content .entry-title a {
-	color: #ccabc1;
+	color: #f7caca;
 }
 
 .sidebar .featured-content .entry-title a:hover {
-	color: #333;
+	color: #615f5f;
 }
 
 .after-entry .featured-content .more-from-category::before,
@@ -1390,7 +1402,7 @@ figcaption,
 
 .sidebar .enews-widget,
 .sidebar .enews-widget .widget-title {
-	color: #333;
+	color: #615f5f;
 }
 
 .sidebar .widget.enews-widget {
@@ -1408,14 +1420,14 @@ figcaption,
 }
 
 .sidebar .enews-widget input[type="submit"] {
-	background-color: #ccabc1;
+	background-color: #f7caca;
 	border-width: 0;
 	color: #fff;
 }
 
 .sidebar .enews-widget input:focus[type="submit"],
 .sidebar .enews-widget input:hover[type="submit"] {
-	background-color: #333;
+	background-color: #615f5f;
 	color: #fff;
 }
 
@@ -1529,7 +1541,7 @@ figcaption,
 
 /* Display outline on focus */
 :focus {
-	color: #333;
+	color: #615f5f;
 	outline: #ccc solid 1px;
 }
 
@@ -1568,7 +1580,7 @@ figcaption,
 .site-title a,
 .site-title a:focus,
 .site-title a:hover {
-	color: #fff;
+	color: #f7caca;
 	text-decoration: none;
 }
 
@@ -1626,7 +1638,7 @@ figcaption,
 }
 
 .header-left .search-form::before {
-	color: #fff;
+	color: #f7caca;
 	content: "\f375";
 	display: block;
 	font-family: "Ionicons"; /* stylelint-disable-line */
@@ -1648,7 +1660,7 @@ figcaption,
 .header-left input[type="search"] {
 	border-width: 0;
 	background-color: transparent;
-	color: #fff;
+	color: #f7caca;
 	font-size: 14px;
 	font-weight: 700;
 	letter-spacing: 2px;
@@ -1657,17 +1669,17 @@ figcaption,
 }
 
 .header-left :-ms-input-placeholder {
-	color: #fff;
+	color: #f7caca;
 	opacity: 1;
 }
 
 .header-left ::-ms-input-placeholder {
-	color: #fff;
+	color: #f7caca;
 	opacity: 1;
 }
 
 .header-left ::placeholder {
-	color: #fff;
+	color: #f7caca;
 	opacity: 1;
 }
 
@@ -1676,7 +1688,7 @@ figcaption,
 }
 
 .no-off-screen-menu .header-left .search-form::before {
-	color: #fff;
+	color: #f7caca;
 	content: "\f375";
 	display: block;
 	font-family: "Ionicons"; /* stylelint-disable-line */
@@ -1730,7 +1742,7 @@ figcaption,
 }
 
 .genesis-nav-menu a {
-	color: #333;
+	color: #615f5f;
 	display: inline-block;
 	letter-spacing: 2px;
 	outline-offset: -1px;
@@ -1808,7 +1820,7 @@ figcaption,
 }
 
 .nav-primary .genesis-nav-menu a {
-	color: #fff;
+	color: #f7caca;
 }
 
 .nav-primary .wrap {
@@ -1822,7 +1834,7 @@ figcaption,
 .nav-primary .genesis-nav-menu > .menu-item > a:focus,
 .nav-primary .genesis-nav-menu > .menu-item > a:hover,
 .nav-primary .genesis-nav-menu > .menu-item.current-menu-item > a {
-	border-bottom-color: #fff;
+	border-bottom-color: #f7caca;
 }
 
 /* Off Screen Navigation
@@ -1838,7 +1850,7 @@ figcaption,
 }
 
 .off-screen-menu .genesis-nav-menu a {
-	color: #fff;
+	color: #f7caca;
 	font-family: Raleway, serif;
 	font-size: 32px;
 	font-weight: 400;
@@ -1850,12 +1862,12 @@ figcaption,
 
 .off-screen-menu .genesis-nav-menu a:focus,
 .off-screen-menu .genesis-nav-menu a:hover {
-	color: #ccabc1;
+	color: #d2c4d6;
 }
 
 button.off-screen-item {
 	background-color: transparent;
-	color: #fff;
+	color: #f7caca;
 }
 
 .no-off-screen-menu .site-title,
@@ -1877,12 +1889,12 @@ button.off-screen-item {
 }
 
 .site-footer .genesis-nav-menu a {
-	color: #333;
+	color: #615f5f;
 }
 
 .site-footer .genesis-nav-menu a:focus,
 .site-footer .genesis-nav-menu a:hover {
-	color: #e5cedb;
+	color: #b0879b;
 }
 
 
@@ -1896,6 +1908,7 @@ button.off-screen-item {
 	background-color: #fff;
 	box-shadow: 0 25px 40px 0 rgba(0, 0, 0, 0.05);
 	margin-bottom: 40px;
+	border-radius: 10px;
 }
 
 .error404 .content .entry,
@@ -1953,15 +1966,15 @@ button.off-screen-item {
 }
 
 .entry-content code {
-	background-color: #333;
-	color: #eee;
+	background-color: #615f5f;
+	color: #f0eee9;
 }
 
 /* Entry Meta
 --------------------------------------------- */
 
 p.entry-meta {
-	color: #767676;
+	color: #ec9688;
 	font-size: 13px;
 	font-weight: 700;
 	letter-spacing: 3px;
@@ -1970,7 +1983,7 @@ p.entry-meta {
 }
 
 .entry-meta a {
-	color: #767676;
+	color: #b0879b;
 	text-decoration: none;
 }
 
@@ -1981,7 +1994,7 @@ p.entry-meta {
 
 .hero-page-title p.entry-meta,
 .hero-page-title .entry-meta a {
-	color: #ccc;
+	color: #f0eee9;
 }
 
 .hero-page-title .entry-meta a:focus,
@@ -2059,8 +2072,8 @@ p.entry-meta {
 .pagination a:focus,
 .pagination a:hover,
 .pagination .active a {
-	border-color: #ccabc1;
-	color: #ccabc1;
+	border-color: #f7caca;
+	color: #f7caca;
 }
 
 /* Comments
@@ -2084,7 +2097,7 @@ p.entry-meta {
 }
 
 .entry-comments::before {
-	background-color: #e8e8e8;
+	background-color: #f0eee9;
 	content: "";
 	display: block;
 	height: 40px;
@@ -2113,7 +2126,7 @@ p.entry-meta {
 }
 
 .comment-list .comment:not(.depth-1) article {
-	border-left: 2px solid #e8e8e8;
+	border-left: 2px solid #f7caca;
 	padding: 0 0 10px 50px;
 }
 
@@ -2122,7 +2135,7 @@ p.entry-meta {
 }
 
 .comment-header .comment-author-link {
-	color: #111;
+	color: #615f5f;
 	font-size: 16px;
 	font-weight: 700;
 	letter-spacing: 2px;
@@ -2131,7 +2144,7 @@ p.entry-meta {
 }
 
 .comment-meta .comment-time-link {
-	color: #999;
+	color: #f7caca;
 	font-size: 13px;
 	font-weight: 700;
 	letter-spacing: 2px;
@@ -2184,6 +2197,7 @@ p.entry-meta {
 .sidebar .widget {
 	background-color: #fff;
 	box-shadow: 0 25px 40px 0 rgba(0, 0, 0, 0.05);
+	border-radius: 10px;
 	padding: 40px;
 }
 
@@ -2318,7 +2332,7 @@ p.entry-meta {
 }
 
 .after-content-featured .featuredpage .entry .entry-header a {
-	color: #fff;
+	color: #f0eee9;
 	display: block;
 	height: 100%;
 	left: 0;
@@ -2351,7 +2365,7 @@ p.entry-meta {
 .after-content-featured .featuredpage a,
 .after-content-featured .featuredpage .more-link,
 .after-content-featured .featuredpage .more-link.button.text {
-	color: #fff;
+	color: #f0eee9;
 }
 
 .after-content-featured .featuredpage a:focus,
@@ -2360,20 +2374,20 @@ p.entry-meta {
 .after-content-featured .featuredpage .more-link:hover,
 .after-content-featured .featuredpage .more-link.button.text:focus,
 .after-content-featured .featuredpage .more-link.button.text:hover {
-	color: #ccc;
+	color: #f7caca;
 }
 
 /* Front Page Featured
 --------------------------------------------- */
 
 .front-page-featured {
-	background-color: #f4f4f4;
+	background-color: #f0eee9;
 	padding: 40px 0;
 }
 
 .front-page-featured .widget,
 .front-page-featured .widget:last-of-type {
-	background-color: #f4f4f4;
+	background-color: #f0eee9;
 	padding: 0;
 }
 
@@ -2388,7 +2402,7 @@ p.entry-meta {
 }
 
 .front-page-featured blockquote cite {
-	color: #767676;
+	color: #615f5f;
 	display: block;
 	font-family: "Lato", sans-serif;
 	font-size: 13px;
@@ -2409,7 +2423,7 @@ p.entry-meta {
 }
 
 .footer-cta::before {
-	background-color: #ccabc1;
+	background-color: #f7caca;
 	content: "";
 	display: block;
 	height: 100px;
@@ -2420,7 +2434,7 @@ p.entry-meta {
 }
 
 .footer-cta .widget {
-	background-color: #fff;
+	background-color: #f7caca;
 	box-shadow: 0 25px 40px 0 rgba(0, 0, 0, 0.05);
 	padding: 150px 200px 100px 200px;
 	text-align: center;
@@ -2675,7 +2689,7 @@ p.entry-meta {
 	.sub-menu-toggle {
 		border-width: 0;
 		background-color: transparent;
-		color: #fff;
+		color: #f7caca;
 		display: block;
 		margin: 0 auto;
 		overflow: hidden;
@@ -2685,7 +2699,7 @@ p.entry-meta {
 
 	.menu-toggle:focus,
 	.sub-menu-toggle:focus {
-		outline: 1px solid #fff;
+		outline: 1px solid #f0eee9;
 	}
 
 	.menu-toggle:focus,
@@ -2693,8 +2707,8 @@ p.entry-meta {
 	.sub-menu-toggle:focus,
 	.sub-menu-toggle:hover {
 		background: transparent;
-		color: #ccabc1;
-		outline: 1px solid #fff;
+		color: #f7caca;
+		outline: 1px solid #f0eee9;
 		outline-offset: -1px;
 	}
 
@@ -2733,7 +2747,7 @@ p.entry-meta {
 	}
 
 	.genesis-responsive-menu .genesis-nav-menu {
-		background-color: #000;
+		background-color: #615f5f;
 	}
 
 	.genesis-responsive-menu.nav-primary .genesis-nav-menu .menu-item {
@@ -2755,11 +2769,11 @@ p.entry-meta {
 
 	.genesis-responsive-menu .genesis-nav-menu a:focus,
 	.genesis-responsive-menu .genesis-nav-menu a:hover {
-		color: #ccabc1;
+		color: #f7caca;
 	}
 
 	.genesis-responsive-menu .genesis-nav-menu .menu-item a {
-		background-color: #000;
+		background-color: #615f5f;
 		border-width: 0;
 		padding: 15px 20px;
 		width: 100%;
